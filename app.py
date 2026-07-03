@@ -1,4 +1,3 @@
-from itertools import product
 
 from flask import Flask, jsonify, request
 import requests
@@ -84,17 +83,17 @@ def fetch_products_by_barcode(barcode):
     return {
         "barcode": barcode,
 
-        "product_name": product.get("product_name"),
+        "product_name": product_data.get("product_name"),
 
-        "brand": product.get("brands"),
+        "brand": product_data.get("brands"),
 
-        "categories": product.get("categories"),
+        "categories": product_data.get("categories"),
 
-        "quantity": product.get("quantity"),
+        "quantity": product_data.get("quantity"),
 
-        "nutriscore": product.get("nutriscore_grade"),
+        "nutriscore": product_data.get("nutriscore_grade"),
 
-        "image_url": product.get("image_url")
+        "image_url": product_data.get("image_url")
     }
 
 def enhance_inventory_item(item):
