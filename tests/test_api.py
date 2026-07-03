@@ -37,5 +37,3 @@ def test_update_inventory_item(client):
 def test_delete_inventory_item(client):
     response = client.delete('/inventory/2')
     assert response.status_code == 200
-
-    
