@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = "https://world.openfoodfacts.org/api/v0/product/"
+BASE_URL = "http://127.0.0.1:5000"
 
 def view_inventory():
 
@@ -27,7 +27,7 @@ Price: {item['price']}
     except requests.exceptions.ConnectionError:
         print("Error: Unable to connect to the API.")
 
-def view_single_item(item_id):
+def view_single_item():
     try:
         item_id = int(
             input("Enter item ID:")
