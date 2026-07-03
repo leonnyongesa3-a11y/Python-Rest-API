@@ -23,7 +23,7 @@ def test_fetch_product_success(mock_get):
         }
     }
 
-    result = fetch_product_by_barcode(
+    result = fetch_products_by_barcode(
         "3017620422003"
     )
 
