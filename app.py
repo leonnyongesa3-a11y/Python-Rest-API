@@ -199,7 +199,7 @@ def delete_inventory_item(item_id):
 
 @app.route('/products/barcode/<barcode>', methods=['GET'])
 def get_product_by_barcode(barcode):
-    product = fetch_product_by_barcode(barcode)
+    product = fetch_products_by_barcode(barcode)
 
     if "error" in product:
         return jsonify(product), 404
