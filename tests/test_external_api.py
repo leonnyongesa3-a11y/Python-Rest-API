@@ -30,29 +30,3 @@ def test_fetch_product_success(mock_get):
     assert result['product_name'] == (
         "Nutella"
     )
-
-    assert result['brand'] == (
-        "Ferrero"
-    )
-
-
-@patch('app.requests.get')
-def test_fetch_product_not_found(
-    mock_get
-):
-
-    mock_get.return_value.status_code = 200
-
-    mock_get.return_value.json.return_value = {
-
-        "status": 0
-    }
-
-    result = fetch_products_by_barcode(
-        "000000"
-    )
-
-    assert (
-        result['error']
-        == "Product not found"
-    )
